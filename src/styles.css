@@ -1,0 +1,222 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+/*
+ * Design system — Portfólio Product Management (Sophia Mendonça)
+ * Corporate / SaaS aesthetic: lilac accents, generous whitespace, soft cards.
+ * All colors in oklch. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 3px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 12px);
+  --radius-3xl: calc(var(--radius) + 20px);
+
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-deep: var(--primary-deep);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-surface: var(--surface);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --shadow-card: 0 1px 2px oklch(0.278 0.03 256.8 / 0.04), 0 8px 24px -12px oklch(0.278 0.03 256.8 / 0.1);
+  --shadow-card-hover:
+    0 2px 4px oklch(0.278 0.03 256.8 / 0.05), 0 24px 48px -20px oklch(0.597 0.226 286.5 / 0.28);
+  --shadow-soft: 0 1px 3px oklch(0.278 0.03 256.8 / 0.06);
+}
+
+:root {
+  --radius: 1rem;
+
+  --background: oklch(0.986 0.003 286.4); /* #FAFAFC */
+  --foreground: oklch(0.278 0.03 256.8); /* #1F2937 */
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.278 0.03 256.8);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.278 0.03 256.8);
+
+  --primary: oklch(0.597 0.226 286.5); /* #7C5CFC */
+  --primary-foreground: oklch(1 0 0);
+  --primary-deep: oklch(0.38 0.178 293.7); /* #4C1D95 */
+
+  --secondary: oklch(0.709 0.159 293.5); /* #A78BFA */
+  --secondary-foreground: oklch(0.278 0.03 256.8);
+
+  --accent: oklch(0.811 0.101 293.6); /* #C4B5FD */
+  --accent-foreground: oklch(0.38 0.178 293.7);
+
+  --surface: oklch(0.964 0.018 296.6); /* #F4F1FE */
+  --muted: oklch(0.943 0.028 294.6); /* #EDE9FE */
+  --muted-foreground: oklch(0.551 0.023 264.4); /* #6B7280 */
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.928 0.006 264.5); /* #E5E7EB */
+  --border-strong: oklch(0.88 0.02 293);
+  --input: oklch(0.928 0.006 264.5);
+  --ring: oklch(0.597 0.226 286.5);
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    oklch(0.597 0.226 286.5),
+    oklch(0.709 0.159 293.5)
+  );
+  --gradient-text: linear-gradient(
+    100deg,
+    oklch(0.45 0.2 288),
+    oklch(0.62 0.2 290)
+  );
+  --gradient-surface: linear-gradient(
+    180deg,
+    oklch(0.964 0.018 296.6),
+    oklch(0.986 0.003 286.4)
+  );
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.022em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--color-muted);
+    color: var(--color-primary-deep);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+}
+
+/* ---------- Design system utilities ---------- */
+
+@utility text-gradient {
+  background-image: var(--gradient-text);
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gradient-primary {
+  background-image: var(--gradient-primary);
+}
+
+@utility bg-gradient-surface {
+  background-image: var(--gradient-surface);
+}
+
+@utility surface-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+}
+
+@utility surface-card-interactive {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-card-hover);
+  }
+}
+
+@utility grid-backdrop {
+  background-image:
+    linear-gradient(to right, oklch(0.597 0.226 286.5 / 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.597 0.226 286.5 / 0.07) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 20%, transparent 75%);
+}
+
+/* Scroll reveal — progressive enhancement, visible by default without JS */
+@utility reveal {
+  opacity: 1;
+}
+
+.js-reveal [data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.js-reveal [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js-reveal [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
