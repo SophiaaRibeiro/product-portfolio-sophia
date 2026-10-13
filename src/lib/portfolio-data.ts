@@ -1,6 +1,6 @@
 import caseDocumentacao from "@/assets/case-documentacao.jpg";
-import caseAirbnb from "@/assets/case-airbnb.jpg";
-import caseNetflix from "@/assets/case-netflix.jpg";
+import caseFintech from "@/assets/Fintech_X.png";
+import caseOnboarding from "@/assets/case-onboarding.png";
 
 export const profile = {
   name: "Sophia Ribeiro Mendonça",
@@ -102,6 +102,7 @@ export interface ProductCase {
   href: string;
 }
 
+
 export const productCases: ProductCase[] = [
   {
     id: "documentacao-tecnica",
@@ -136,76 +137,94 @@ export const productCases: ProductCase[] = [
     href: "https://app.notion.com/p/Case-1-Criar-um-produto-do-zero-Sistema-de-Estacionamento-317e82d666fb80b9a0e1e547be311197",
   },
   {
-    id: "airbnb-feedback",
+    id: "fintech-retencao-churn",
     index: "02",
-    title: "Airbnb — Análise de Feedback dos Usuários",
-    subtitle: "Escuta ativa transformada em backlog priorizado",
-    cover: caseAirbnb,
+    title: "Fintech X — Análise de Retenção e Churn",
+    subtitle: "Dados e comportamento para identificar oportunidades de retenção",
+    cover: caseOnboarding,
     description:
-      "Análise estruturada de feedback de usuários da plataforma para identificar atritos recorrentes na jornada de busca e reserva, e transformá-los em oportunidades priorizadas de produto.",
+      "Case de Product Analytics com dados simulados para investigar a queda de retenção em uma funcionalidade financeira, analisar o comportamento dos usuários e propor ações para aumentar o engajamento.",
     problem:
-      "Volume alto de feedback disperso entre avaliações e canais de suporte, sem categorização — sem clareza sobre quais atritos realmente impactavam conversão e retenção.",
+      "A retenção dos usuários diminui ao longo dos meses após o primeiro contato com a funcionalidade. O desafio é entender quais comportamentos estão associados à permanência dos usuários e identificar oportunidades de melhoria na experiência inicial.",
     solution:
-      "Classifiquei os feedbacks por tema e severidade, complementei com pesquisa qualitativa com usuários, transformei os achados em product backlog com user stories e priorizei por impacto no funil versus esforço.",
+      "Estruturei uma análise de retenção por coortes e comparei grupos de usuários conforme o momento da primeira utilização da funcionalidade, utilizando SQL para investigar a relação entre ativação inicial e retenção. A partir dos insights, propus melhorias no onboarding e um teste A/B para avaliar seu impacto.",
     learnings:
-      "O usuário descreve sintoma, não solução. Agrupar feedback por problema — e não por pedido — muda completamente a ordem do backlog e evita construir features que ninguém usa.",
-    highlightsLabel: "Etapas do case",
+      "A análise de dados ajuda a transformar um problema amplo de retenção em hipóteses mais específicas e testáveis. A associação entre ativação inicial e retenção indica uma oportunidade de investigação, mas precisa ser validada por experimentos antes de estabelecer uma relação causal.",
+    highlightsLabel: "Etapas da análise",
     highlights: [
-      "Objetivo",
-      "Identificação de problemas",
-      "Pesquisa com usuários",
-      "Product Backlog",
-      "Priorização",
-      "Métricas",
-      "Aprendizados",
+      "Definição do Problema",
+      "Hipóteses",
+      "SQL",
+      "Cohort Analysis",
+      "Retenção e Churn",
+      "Análise de Ativação",
+      "Insights de Produto",
+      "Onboarding",
+      "Teste A/B",
     ],
     metrics: [
-      { label: "Conversão", value: "Funil de reserva" },
-      { label: "Retenção", value: "Recompra" },
-      { label: "NPS", value: "Lealdade" },
-      { label: "CSAT", value: "Satisfação" },
-      { label: "Churn", value: "Abandono" },
+      { label: "Retenção", value: "M1, M2 e M3" },
+      { label: "Ativação", value: "Primeiros 3 dias" },
+      { label: "Churn", value: "Abandono ao longo dos meses" },
+      { label: "Engajamento", value: "Uso da funcionalidade" },
+      { label: "Experimento", value: "Retenção M2" },
     ],
-    stack: ["User Research", "Product Discovery", "RICE", "Kanban", "Excel", "Power BI"],
+    stack: [
+      "SQL Server",
+      "SQL",
+      "Product Analytics",
+      "Cohort Analysis",
+      "Retention",
+      "A/B Testing",
+    ],
     ctaLabel: "Ver Case",
-    href: "https://app.notion.com/p/Case-2-Product-Backlog-baseado-em-Reviews-3a9e82d666fb80caac85f7ac9821e4c0",
+    href: "https://app.notion.com/p/Cases-392e82d666fb802887abcbf19baa35b6",
   },
   {
-    id: "netflix-produto",
+    id: "onboarding-banco-digital-60",
     index: "03",
-    title: "Netflix — Análise de Produto",
-    subtitle: "Hipóteses, experimentação e leitura de engajamento",
-    cover: caseNetflix,
+    title: "Banco Digital — Redesenho do Onboarding para o Público 60+",
+    subtitle: "Uma experiência digital mais simples, acessível e intuitiva",
+    cover: caseFintech,
     description:
-      "Análise de produto sobre descoberta de conteúdo e engajamento, mapeando oportunidades de melhoria na experiência de recomendação e formulando hipóteses testáveis.",
+      "Análise e proposta de melhoria da jornada de onboarding de um banco digital, com foco nas necessidades de pessoas com 60 anos ou mais e na redução de possíveis barreiras de usabilidade.",
     problem:
-      "Fricção na descoberta de conteúdo: tempo excessivo de navegação antes do play, com risco direto de queda de engajamento e aumento de churn.",
+      "Processos de onboarding podem apresentar dificuldades para usuários com diferentes níveis de familiaridade digital. O desafio é identificar possíveis barreiras na jornada e propor uma experiência mais clara, acessível e fácil de concluir para o público 60+.",
     solution:
-      "Mapeei oportunidades na jornada, priorizei as de maior impacto potencial, escrevi hipóteses no formato 'acreditamos que… mediremos por…' e defini o desenho de experimentos A/B com métricas de sucesso e guardrails.",
+      "Analisei a jornada de onboarding sob a perspectiva do público 60+, identificando oportunidades de simplificação e melhoria da experiência. A proposta de redesenho prioriza clareza das instruções, facilidade de navegação e redução de fricções durante as etapas iniciais de uso do banco digital.",
     learnings:
-      "Métrica sem hipótese é dashboard. Amarrar cada oportunidade a uma hipótese e a uma métrica-alvo é o que permite aprender rápido e descartar ideias sem custo emocional.",
+      "Uma boa experiência digital precisa considerar as necessidades e limitações de diferentes perfis de usuários. Simplificar a jornada, tornar as instruções mais claras e reduzir barreiras de navegação pode contribuir para uma experiência mais inclusiva e acessível.",
     highlightsLabel: "Etapas do case",
     highlights: [
-      "Objetivo",
-      "Problema",
-      "Oportunidades",
-      "Priorização",
-      "Hipóteses",
-      "Métricas",
+      "Contexto e Objetivo",
+      "Análise da Jornada",
+      "Identificação de Barreiras",
+      "Experiência do Usuário",
+      "Oportunidades de Melhoria",
+      "Proposta de Redesenho",
+      "Acessibilidade Digital",
       "Aprendizados",
     ],
     metrics: [
-      { label: "Retenção", value: "Coorte mensal" },
-      { label: "Tempo de sessão", value: "Média por usuário" },
-      { label: "Engajamento", value: "Play rate" },
-      { label: "NPS", value: "Percepção" },
-      { label: "Churn", value: "Cancelamento" },
+      { label: "Conclusão", value: "Taxa de conclusão do onboarding" },
+      { label: "Abandono", value: "Desistência por etapa" },
+      { label: "Usabilidade", value: "Dificuldades na jornada" },
+      { label: "Tempo", value: "Tempo para concluir o processo" },
+      { label: "Satisfação", value: "Experiência percebida" },
     ],
-    stack: ["Product Analytics", "A/B Testing", "SQL", "Power BI", "Discovery", "OKRs"],
+    stack: [
+      "Product Discovery",
+      "UX Research",
+      "User Journey",
+      "Usabilidade",
+      "Acessibilidade Digital",
+      "Product Thinking",
+    ],
     ctaLabel: "Ver Case",
-    href: "https://app.notion.com/p/Case-03-Product-Teardown-3a9e82d666fb8073a7eecef156a99df6",
+    href: "https://app.notion.com/p/Case-06-Redesenho-do-Onboarding-para-o-P-blico-60-em-um-Banco-Digital-3c2e82d666fb80d88d59c72660573f4e",
   },
 ];
+
 
 export interface CompetencyGroup {
   title: string;
