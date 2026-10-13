@@ -1,6 +1,6 @@
 import caseDocumentacao from "@/assets/case-documentacao.jpg";
-import caseFintech from "@/assets/Fintech_X.png";
-import caseOnboarding from "@/assets/case-onboarding.png";
+import caseFintech from "@/assets/case-onboarding.png";
+import caseOnboarding from "@/assets/Fintech_X.png";
 
 export const profile = {
   name: "Sophia Ribeiro Mendonça",
@@ -178,7 +178,7 @@ export const productCases: ProductCase[] = [
       "A/B Testing",
     ],
     ctaLabel: "Ver Case",
-    href: "https://app.notion.com/p/Cases-392e82d666fb802887abcbf19baa35b6",
+    href: "https://fanatical-basil-17c.notion.site/Case-11-An-lise-de-Reten-o-e-Churn-Fintech-X-3c2e82d666fb80e7addcdb72341ad5df",
   },
   {
     id: "onboarding-banco-digital-60",
