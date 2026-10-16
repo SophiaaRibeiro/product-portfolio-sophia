@@ -1,6 +1,7 @@
 import caseDocumentacao from "@/assets/case-documentacao.jpg";
-import caseFintech from "@/assets/case-onboarding.png";
-import caseOnboarding from "@/assets/Fintech_X.png";
+import caseFintech from "@/assets/Fintech_X.png";
+import caseOnboarding from "@/assets/case-onboarding.png";
+
 
 export const profile = {
   name: "Sophia Ribeiro Mendonça",
@@ -141,7 +142,7 @@ export const productCases: ProductCase[] = [
     index: "02",
     title: "Fintech X — Análise de Retenção e Churn",
     subtitle: "Dados e comportamento para identificar oportunidades de retenção",
-    cover: caseOnboarding,
+    cover: caseFintech,
     description:
       "Case de Product Analytics com dados simulados para investigar a queda de retenção em uma funcionalidade financeira, analisar o comportamento dos usuários e propor ações para aumentar o engajamento.",
     problem:
@@ -178,14 +179,14 @@ export const productCases: ProductCase[] = [
       "A/B Testing",
     ],
     ctaLabel: "Ver Case",
-    href: "https://fanatical-basil-17c.notion.site/Case-11-An-lise-de-Reten-o-e-Churn-Fintech-X-3c2e82d666fb80e7addcdb72341ad5df",
+    href: "https://app.notion.com/p/Cases-392e82d666fb802887abcbf19baa35b6",
   },
   {
     id: "onboarding-banco-digital-60",
     index: "03",
     title: "Banco Digital — Redesenho do Onboarding para o Público 60+",
     subtitle: "Uma experiência digital mais simples, acessível e intuitiva",
-    cover: caseFintech,
+    cover: caseOnboarding,
     description:
       "Análise e proposta de melhoria da jornada de onboarding de um banco digital, com foco nas necessidades de pessoas com 60 anos ou mais e na redução de possíveis barreiras de usabilidade.",
     problem:
